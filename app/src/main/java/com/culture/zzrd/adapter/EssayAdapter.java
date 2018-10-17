@@ -1,6 +1,7 @@
 package com.culture.zzrd.adapter;
 
 import android.content.Context;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.culture.zzrd.R;
 import com.culture.zzrd.data.Essay;
+import com.culture.zzrd.dialog.CommentDialogFragment;
 import com.culture.zzrd.guoview.ShowTextView;
 import com.culture.zzrd.guoview.ShuTextView;
 
@@ -24,10 +26,12 @@ import java.util.List;
 public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.ViewHolder> {
     private List<Essay> mEssayLists;
     private Context mContext;
+    private FragmentManager supportFragmentManager;
 
-    public EssayAdapter(Context mContext, List<Essay> mEssayLists) {
+    public EssayAdapter(Context mContext, List<Essay> mEssayLists, FragmentManager supportFragmentManager) {
         this.mContext = mContext;
         this.mEssayLists = mEssayLists;
+        this.supportFragmentManager = supportFragmentManager;
 
     }
 
@@ -45,6 +49,12 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.ViewHolder> 
         Essay essay = mEssayLists.get(position);
         holder.stv_content.setText(essay.getContent());
         holder.tv_reward.setText("茴香豆:" + essay.getNum_reward());
+        holder.img_comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new CommentDialogFragment(mContext, 1, 9999).show(supportFragmentManager, "dialog");
+            }
+        });
         holder.img_more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,10 +92,12 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.ViewHolder> 
         ImageView img_share;
         ImageView img_report;
         ImageView img_cancle;
+        ImageView img_comment;
 
 
         ViewHolder(View itemView) {
             super(itemView);
+            img_comment = itemView.findViewById(R.id.img_comment);
             stv_content = itemView.findViewById(R.id.stv_content);
             img_reward = itemView.findViewById(R.id.img_reward);
             tv_reward = itemView.findViewById(R.id.tv_reward);

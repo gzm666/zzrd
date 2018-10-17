@@ -3,6 +3,7 @@ package com.culture.zzrd.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
@@ -29,7 +30,13 @@ public class SquareFragment extends Fragment {
     private RecyclerView rv_square;
     private EssayAdapter mEssayAdapter;
     private List<Essay> mEssay;
+    private FragmentManager fragmentManager;
 
+    public SquareFragment(FragmentManager fm){
+        this.fragmentManager=fm;
+
+
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -68,7 +75,7 @@ public class SquareFragment extends Fragment {
         essay2.setNum_reward(999);
         mEssay.add(essay2);
         mEssay.add(essay);
-        mEssayAdapter = new EssayAdapter(mContext,mEssay);
+        mEssayAdapter = new EssayAdapter(mContext,mEssay,fragmentManager);
         rv_square.setAdapter(mEssayAdapter);
         new PagerSnapHelper() {
             @Override

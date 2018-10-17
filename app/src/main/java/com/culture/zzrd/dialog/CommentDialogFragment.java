@@ -10,9 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.culture.zzrd.R;
+import com.culture.zzrd.adapter.AdapterComment;
+import com.culture.zzrd.adapter.CommentAdapter;
+import com.culture.zzrd.data.Comment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by guozm on 2018/10/16.
@@ -22,6 +29,11 @@ public class CommentDialogFragment extends BottomSheetDialogFragment {
     private Context mContext;
     private int id;
     private int num_comment;
+    //    private CommentAdapter mCommentAdapter;
+    private List<Comment> mCommentList;
+    //    private RecyclerView rv_comment;
+    private ListView lv_comment;
+    private AdapterComment mCommentAdapter;
 
     public CommentDialogFragment(Context mContext, int id, int num_comment) {
         this.mContext = mContext;
@@ -41,11 +53,29 @@ public class CommentDialogFragment extends BottomSheetDialogFragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        TextView tv_comment= view.findViewById(R.id.tv_comment);
-        tv_comment.setText(id+"条评论");
-        RecyclerView rv_comment = view.findViewById(R.id.rv_comment);
-        rv_comment.setLayoutManager(new LinearLayoutManager(getContext()));
-//        rv_comment.setAdapter(new ItemAdapter(100));
+        TextView tv_comment = view.findViewById(R.id.tv_comment);
+        tv_comment.setText(num_comment + "条评论");
+        lv_comment = view.findViewById(R.id.lv_comment);
+//        rv_comment.setLayoutManager(new LinearLayoutManager(getContext()));
+        mCommentList = new ArrayList<>();
+        Comment comment = new Comment();
+        comment.setHasReply(true);
+        Comment comment2 = new Comment();
+        comment2.setHasReply(false);
+        mCommentList.add(comment);
+        mCommentList.add(comment);
+        mCommentList.add(comment2);
+        mCommentList.add(comment2);
+        mCommentList.add(comment);
+        mCommentList.add(comment2);
+        mCommentList.add(comment);
+        mCommentList.add(comment);
+        mCommentList.add(comment2);
+        mCommentList.add(comment2);
+        mCommentList.add(comment);
+        mCommentList.add(comment2);
+        mCommentAdapter = new AdapterComment(mContext, mCommentList);
+        lv_comment.setAdapter(mCommentAdapter);
 
     }
 
