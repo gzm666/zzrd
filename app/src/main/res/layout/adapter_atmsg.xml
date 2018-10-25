@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/img_head"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="1"
+        android:src="@drawable/ic_launcher" />
+
+    <RelativeLayout
+        android:id="@+id/rl_at"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_80"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/tv_atword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/dp_5"
+            android:ellipsize="end"
+            android:maxLength="100"
+            android:text="色即是空道具卡接口接口了大家科技时代来看了空间可拉伸机的阿里看见sdkjas"
+            android:textColor="#666666"
+            android:textSize="8sp" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_80"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_toLeftOf="@+id/rl_at"
+        android:layout_toRightOf="@+id/img_head">
+
+        <TextView
+            android:id="@+id/tv_sname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小丸子"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="10-24 18:23"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_sname"
+            android:layout_marginTop="@dimen/dp_5"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="上看到就看见可接受了看舵机啊空间的拉可接受的拉克丝几点啦了思考的进来看了j"
+            android:textColor="#9f7765"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

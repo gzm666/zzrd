@@ -6,7 +6,8 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_square"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp_50">
 
     </android.support.v7.widget.RecyclerView>
 
@@ -17,38 +18,160 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_cihai"
+            android:id="@+id/tv_square"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginRight="@dimen/dp_10"
-            android:layout_gravity="center_vertical"
+            android:text="广 场"
             android:textColor="#222222"
-            android:textStyle="bold"
             android:textSize="18sp"
-            android:text="广 场"/>
-        
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="2dp"
             android:layout_height="@dimen/dp_20"
             android:layout_gravity="center_vertical"
-            android:background="#444444">
-        </LinearLayout>
+            android:background="#444444"></LinearLayout>
 
         <TextView
             android:id="@+id/tv_topic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginRight="@dimen/dp_10"
-            android:layout_gravity="center_vertical"
+            android:text="命 题"
             android:textColor="#666666"
-            android:textStyle="bold"
             android:textSize="18sp"
-            android:text="命 题"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
+
+    <LinearLayout
+        android:id="@+id/ll_topic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_50"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5">
+
+            <TextView
+                android:id="@+id/tv_periods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="第1期"
+                android:textColor="#FF9224"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_topic_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="2018-10-01~2018-10-30"
+                android:textColor="#FF9224"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#999999"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_topname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="话题:"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_topic_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="上课了打开来看聚少离多案例集昆仑决了大开杀戒看图说话色块搭建奥科了家里库升级大了就"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:background="#000000"
+            android:visibility="gone">
+
+            <VideoView
+                android:id="@+id/vv_topic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true" />
+
+            <ImageView
+                android:id="@+id/img_paly"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
+                android:layout_centerInParent="true"
+                android:src="@drawable/play_video" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_top_explain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="说明:"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_topic_explain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="上课了打开来看聚少离多案例集昆仑决了上课了打开来看聚少离多案例集昆仑决了上课了打开来看聚少离多案例集昆仑决了"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_show"
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="@dimen/dp_15"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:src="@drawable/topic_show" />
+
+    </LinearLayout>
 
 
 </RelativeLayout>

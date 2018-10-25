@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_70"
+    android:padding="@dimen/dp_5">
+
+    <ImageView
+        android:id="@+id/img_head"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_5"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tv_sname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/img_head"
+        android:text="刘老根"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="10-24 18:23"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_sname"
+        android:layout_toRightOf="@+id/img_head"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="上看到就看见可接受了看舵机啊空间的拉可接受的拉克丝几点啦了思考的进来看了j"
+        android:textColor="#9f7765"
+        android:textSize="14sp" />
+</RelativeLayout>

@@ -66,13 +66,13 @@ public class ShuTextView extends View {
         this.text = text;
         this.TextLength = text.length();
         if (text.length() < 500 && text.length() >= 300) {
-            mFontSize = 24;
+            mFontSize = 40;
         } else if (text.length() < 300 && text.length() >= 100) {
-            mFontSize = 28;
+            mFontSize = 60;
         } else if (text.length() < 100 && text.length() > 0) {
-            mFontSize = 32;
+            mFontSize = 80;
         }else{
-            mFontSize =20;
+            mFontSize =40;
         }
         if (mTextHeight > 0) GetTextInfo();
     }

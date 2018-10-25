@@ -41,23 +41,45 @@ public class ShowTextView extends TextView {
         applySpacing();
     }
 
+    public void setText(String str, boolean isSimple) {
+        originalText = str;
+        doAiSize(isSimple);
+        super.setText(str, BufferType.NORMAL);
+    }
+
     @Override
     public void setText(CharSequence text, BufferType type) {
         originalText = text;
-        doAiSize();
-        super.setText(text,type);
+        doAiSize(false);
+        super.setText(text, type);
 //        applySpacing();
     }
 
-    private void doAiSize() {
+    private void doAiSize(boolean isSimple) {
         if (originalText.length() > 300) {
-            super.setTextSize(16);
+            if (isSimple) {
+                super.setTextSize(12);
+            } else {
+                super.setTextSize(16);
+            }
         } else if (originalText.length() <= 300 && originalText.length() > 150) {
-            super.setTextSize(18);
+            if (isSimple) {
+                super.setTextSize(14);
+            } else {
+                super.setTextSize(18);
+            }
         } else if (originalText.length() <= 150 && originalText.length() > 50) {
-            super.setTextSize(20);
+            if (isSimple) {
+                super.setTextSize(16);
+            } else {
+                super.setTextSize(20);
+            }
         } else if (originalText.length() <= 50 && originalText.length() > 0) {
-            super.setTextSize(22);
+            if (isSimple) {
+                super.setTextSize(18);
+            } else {
+                super.setTextSize(22);
+            }
         }
     }
 
@@ -81,7 +103,7 @@ public class ShowTextView extends TextView {
 //                    // \u00A0 不间断空格 碰见文字追加空格
 //                    builder.append("\u00A0");
 //                }
-                if(isChinese(originalText.charAt(i) + "")&&isChinese(originalText.charAt(i + 1) + "")){
+                if (isChinese(originalText.charAt(i) + "") && isChinese(originalText.charAt(i + 1) + "")) {
                     builder.append("\u00A0");
                     builder.append("\u00A0");
                 }

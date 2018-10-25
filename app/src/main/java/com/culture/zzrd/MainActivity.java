@@ -78,9 +78,9 @@ public class MainActivity extends FragmentActivity {
     }
 
     private void init() {
+        mSquareFragment = new SquareFragment();
         mRecommendFragment = new RecommendFragment();
         mCommunityFragment = new CommunityFragment();
-        mSquareFragment = new SquareFragment(supportFragmentManager);
         mMeFragment = new MeFragment();
 
         fragmentTransaction = supportFragmentManager.beginTransaction();

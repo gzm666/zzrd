@@ -1,14 +1,20 @@
 package com.culture.zzrd.dialog;
 
+import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,7 +23,11 @@ import com.culture.zzrd.R;
 import com.culture.zzrd.adapter.AdapterComment;
 import com.culture.zzrd.adapter.CommentAdapter;
 import com.culture.zzrd.data.Comment;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
+import java.lang.ref.WeakReference;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +35,7 @@ import java.util.List;
  * Created by guozm on 2018/10/16.
  */
 
+@SuppressLint("ValidFragment")
 public class CommentDialogFragment extends BottomSheetDialogFragment {
     private Context mContext;
     private int id;
@@ -32,16 +43,14 @@ public class CommentDialogFragment extends BottomSheetDialogFragment {
     //    private CommentAdapter mCommentAdapter;
     private List<Comment> mCommentList;
     //    private RecyclerView rv_comment;
-    private ListView lv_comment;
+    private PullToRefreshListView lv_comment;
     private AdapterComment mCommentAdapter;
 
     public CommentDialogFragment(Context mContext, int id, int num_comment) {
         this.mContext = mContext;
         this.id = id;
         this.num_comment = num_comment;
-
     }
-
 
     @Nullable
     @Override
@@ -75,8 +84,8 @@ public class CommentDialogFragment extends BottomSheetDialogFragment {
         mCommentList.add(comment);
         mCommentList.add(comment2);
         mCommentAdapter = new AdapterComment(mContext, mCommentList);
+        lv_comment.setMode(PullToRefreshBase.Mode.BOTH);
         lv_comment.setAdapter(mCommentAdapter);
-
     }
 
     private int getScreenHeight(Context context) {

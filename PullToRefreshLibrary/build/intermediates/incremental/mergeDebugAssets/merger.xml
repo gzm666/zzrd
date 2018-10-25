@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="F:\YongGanZao_v1.3\PullToRefreshLibrary\src\main\assets"/><source path="F:\YongGanZao_v1.3\PullToRefreshLibrary\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="F:\YongGanZao_v1.3\PullToRefreshLibrary\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\zzrd\PullToRefreshLibrary\src\main\assets"/><source path="E:\zzrd\PullToRefreshLibrary\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\zzrd\PullToRefreshLibrary\src\debug\assets"/></dataSet></merger>

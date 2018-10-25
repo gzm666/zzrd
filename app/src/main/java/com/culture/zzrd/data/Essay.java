@@ -23,7 +23,6 @@ public class Essay {
     private boolean isCollection;//是否收藏
     private boolean isReward;//是否打赏
     private String content;//内容
-    private int show_type;//显示类型
 
     public int getId() {
         return id;
@@ -151,14 +150,6 @@ public class Essay {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public int getShow_type() {
-        return show_type;
-    }
-
-    public void setShow_type(int show_type) {
-        this.show_type = show_type;
     }
 
     public boolean isReward() {
